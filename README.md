@@ -54,3 +54,69 @@ Support and Resources
 Conclusion
 
 This capstone project provides a unique opportunity to apply predictive maintenance models in a real-world manufacturing context. Best of luck, and enjoy the process of optimizing equipment reliability and minimizing downtime through advanced machine learning techniques!
+
+
+Final Report:
+
+Predictive Maintenance for Enhanced Equipment Reliability
+Introduction:
+
+The Predictive Maintenance project aimed to enhance equipment reliability and minimize downtime through the development of advanced machine learning models. This report provides a detailed account of the project's objectives, methodology, results, and conclusions.
+Methodology:
+Data Exploration:
+
+    Merged and preprocessed multiple datasets (Errors, Failures, Machines, Maintenance, and Telemetry).
+    Handled missing values and encoded categorical variables.
+    Resampled telemetry data for daily frequency.
+
+Predictive Modeling:
+
+    AdaBoost Regressor:
+        Features: 'volt', 'rotate', 'pressure', 'vibration'
+        Target: Numeric values indicating failure (0 or 1)
+        MSE: 0.1969
+
+    XGBoost Regressor:
+        Features same as AdaBoost
+        MSE: 0.2363
+        Identified non-invertible starting MA parameters issue
+
+    Polynomial Regression:
+        Used PolynomialFeatures with Linear Regression
+        MSE: 0.2070
+
+    K-Nearest Neighbors (KNN) Regressor:
+        MSE: 0.31
+
+Time Series Forecasting:
+
+    Focused on 'volt' sensor readings in telemetry data.
+    Resampled data to daily frequency.
+    Utilized SARIMAX model for forecasting.
+    RMSE: 0.7156
+
+Classification Model:
+
+    XGBoost Classifier for failure prediction.
+    Achieved high accuracy (99.88%) with attention to class distribution issues.
+
+Results:
+
+    Evaluation metrics for each model (RMSE, R-squared, MAE).
+    Impact on equipment reliability and cost savings through proactive interventions.
+
+Conclusions:
+
+    Identified key findings from predictive models and time series forecasting.
+    Highlighted the importance of ongoing model optimization and data quality improvement.
+
+Recommendations:
+
+    Feature Engineering: Explore additional features for model enhancement.
+    Model Tuning: Continuously optimize hyperparameters for accuracy improvement.
+    Class Imbalance: Address issues in the classification model for better precision and recall.
+    Data Quality: Emphasize the importance of continuous monitoring and improvement.
+
+Conclusion:
+
+The Predictive Maintenance model demonstrates the potential for significant improvements in equipment reliability and cost savings through proactive interventions. Ongoing optimization and collaboration with domain experts are crucial for sustained success.
